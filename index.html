@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube Lite</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100vh; background: #000; overflow: hidden; }
+    body { display: flex; align-items: center; justify-content: center; }
+    iframe { width: 90%; height: 90%; border: 0; }
+  </style>
+</head>
+<body>
+  <iframe id="p" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+  <script>
+    const v = new URLSearchParams(location.search).get('v');
+    if (v) {
+      document.getElementById('p').src = 'https://www.youtube.com/embed/' + v;
+    }
+  </script>
+</body>
+</html>
